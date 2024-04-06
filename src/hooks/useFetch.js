@@ -6,7 +6,8 @@ function useFetch(url) {
 
     useEffect(() => {
         setLoading(true);
-        .then((res) => res.json())
+        fetch(url)
+            .then((res) => res.json())
             .then((value) => {
                 setData(value);
                 setLoading(false);
@@ -18,5 +19,8 @@ function useFetch(url) {
             .finally(() => setLoading(false));
 
     }, [url]);
+    return [data, loading];
 
 }
+
+export default useFetch;

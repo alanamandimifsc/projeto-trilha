@@ -1,0 +1,123 @@
+[
+    {
+        "nomeTrilha": "Trilha da Costa da Lagoa",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "120",
+        "trajeto": "4",
+        "dificuldade": "iniciante",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha da Galheta",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "90",
+        "trajeto": "3",
+        "dificuldade": "moderada",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/1517266/pexels-photo-1517266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha do Pântano do Sul",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "180",
+        "trajeto": "6",
+        "dificuldade": "avançada",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/209266/pexels-photo-209266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha da Barra da Lagoa",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "60",
+        "trajeto": "2",
+        "dificuldade": "iniciante",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/1952723/pexels-photo-1952723.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha do Morro das Pedras",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "90",
+        "trajeto": "3",
+        "dificuldade": "moderada",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/52518/pexels-photo-52518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha da Lagoinha do Leste",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "150",
+        "trajeto": "5",
+        "dificuldade": "moderada",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha do Ribeirão da Ilha",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "120",
+        "trajeto": "4",
+        "dificuldade": "moderada",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/3369151/pexels-photo-3369151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha da Praia do Matadeiro",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "90",
+        "trajeto": "3",
+        "dificuldade": "iniciante",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/47413/rock-coast-maldives-47413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha do Campeche",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "60",
+        "trajeto": "2",
+        "dificuldade": "iniciante",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/704971/pexels-photo-704971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha do Costão do Santinho",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "180",
+        "trajeto": "6",
+        "dificuldade": "avançada",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/684764/pexels-photo-684764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+        "nomeTrilha": "Trilha do Morro da Cruz",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "duracao": "120",
+        "trajeto": "4",
+        "dificuldade": "moderada",
+        "tipo": "caminhada / trilh",
+        "nomeUsuario": "Alana",
+        "urlImagem": "https://images.pexels.com/photos/451614/pexels-photo-451614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+]

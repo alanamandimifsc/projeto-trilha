@@ -1,14 +1,25 @@
 import * as PropTypes from 'prop-types';
 import './cardTrilha.css';
 import useFetch from '../../hooks/useFetch';
+import { useEffect, useState } from 'react';
 
 function CardTrilha() {
-    const [listaTrilhas] = useFetch("/trilhas.json");
+    const [dados, isLoading] = useFetch("/trilhas.json");
+    const [trilhas, setTrilhas] = useState([]);
+
+    useEffect(() => {
+        if (!isLoading && dados) {
+            setTrilhas(dados.trilhas)
+        }
+
+    }, [dados, isLoading]);
+
+
 
 
     return (
         <>
-            {listaTrilhas && listaTrilhas.map((dadosTrilha) => (
+            {trilhas.map((dadosTrilha) => (
                 <div className="card_container" key={dadosTrilha.name}>
                     <div className="card_img">
                         <img className="card_imagem" width={200} src={dadosTrilha.urlImagem} alt="Imagem da trilha" />

@@ -1,8 +1,8 @@
 function PaginaCadastroTrilhas() {
     return (
-        <div>
-            <h1>Cadastro de trilhas</h1>
-        </div>
+        <div className="container">
+        <h1>Página Cadastro Trilhas</h1>
+      </div>
     );
 }
 export default PaginaCadastroTrilhas;

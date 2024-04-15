@@ -1,0 +1,14 @@
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6em;
+    margin-left: 15em;
+    margin-right: 15em;
+    padding: 2em;
+}
+
+.descricaoInicial {
+    padding: 2em;
+}

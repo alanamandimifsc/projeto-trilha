@@ -16,7 +16,7 @@ function useFetch(url) {
                 window.alert("Erro ao carregar dados");
                 console.error(err);
             })
-            .finally(() => setisLoading(false));
+            .finally(() => setIsLoading(false));
 
     }, [url]);
     return [data, isLoading];

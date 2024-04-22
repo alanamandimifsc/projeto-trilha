@@ -1,6 +1,10 @@
+import { useForm } from "react-hook-form";
 
 
 function PaginaCadastroTrilhas() {
+  const { register } = useForm();
+
+
   return (
     <div className="container">
       <h1>Cadastro de Nova Trilha</h1>
@@ -8,23 +12,45 @@ function PaginaCadastroTrilhas() {
         <div className="container-cadastro">
           <div>
             <label htmlFor="nometrilha">Nome da Trilha:</label>
-            <input type="text" name="nometrilha" required />
+            <input type="text" {...register("nometrilha", {
+              required: "Campo obrigatório",
+              maxLength: { value: 100, message: "Máximo de 100 caracteres" }
+            })} />
           </div>
           <div>
             <label htmlFor="duracao">Duração (min):</label>
-            <input type="number" name="duracao" required />
+            <input type="number"
+              {...register("duracao", {
+                required: "Este campo é obrigatório"
+              })}
+            />
+
           </div>
           <div>
             <label htmlFor="trajeto" >Trajeto (KM):</label>
-            <input type="number" name="trajeto" required />
+            <input type="number" {...register("trajeto", {
+              required: "Este campo é obrigatório"
+            })}
+            />
           </div>
           <div>
             <label htmlFor="cidade">Cidade:</label>
-            <input type="text" name="cidade" required />
+            <input type="text"
+              {...register("cidade", {
+                required: "Este campo é obrigatório",
+                maxLength: {
+                  value: 60,
+                  message: "Este campo aceita no máximo 60 caracteres"
+                }
+              })}
+            />
           </div>
           <div>
             <label htmlFor="estado">Estado:</label>
-            <select id="estado" name="estado">
+            <select
+              {...register("estado", {
+                required: "Este campo é obrigatório"
+              })}>
               <option value="AC">Acre</option>
               <option value="AL">Alagoas</option>
               <option value="AP">Amapá</option>
@@ -60,7 +86,10 @@ function PaginaCadastroTrilhas() {
           </div>
           <div>
             <label htmlFor="dificuldade">Dificuldade:</label>
-            <select name="dificuldade" required>
+            <select
+              {...register("dificuldade", {
+                required: "Este campo é obrigatório"
+              })}>
               <option value="facil">Fácil</option>
               <option value="medio">Médio</option>
               <option value="dificil">Difícil</option>
@@ -68,17 +97,29 @@ function PaginaCadastroTrilhas() {
           </div>
           <div>
             <label htmlFor="tipotrilha">Tipo de Trilha:</label>
-            <select name="tipotrilha" required>
+            <select
+              {...register("tipotrilha", {
+                required: "Este campo é obrigatório"
+              })}>
               <option value="caminhada / trekking">Caminhada / trekking</option>
               <option value="ciclismo">Ciclismo</option>
             </select>
           </div>
           <div>
             <label htmlFor="imagem">Urk da Imagem:</label>
-            <input type="text" name="imagem" required />
+            <input type="text"
+              {...register("imagem", {
+                required: "Este campo é obrigatório",
+                maxLength: {
+                  value: 300,
+                  message: "Este campo aceita no máximo 300 caracteres"
+                }
+              })} />
           </div>
         </div>
       </form>
+      <button>Cadastrar</button>
+      <button>Voltar</button>
     </div>
   );
 }

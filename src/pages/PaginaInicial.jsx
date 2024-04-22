@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function PaginaInicial() {
   return (
     <div className="container">
-      <img width="100%" height="600px" src={"https://images.pexels.com/photos/18275203/pexels-photo-18275203/free-photo-of-natureza-floresta-selva-mata.jpeg?auto=compress&cs=tinysrgb&w=600"} alt="Imagem da trilha menu" />
+      {/* <img width="100%" height="600px" src={"https://images.pexels.com/photos/18275203/pexels-photo-18275203/free-photo-of-natureza-floresta-selva-mata.jpeg?auto=compress&cs=tinysrgb&w=600"} alt="Imagem da trilha menu" /> */}
 
       <PaginaInicialOrganisms style={{ position: "absolute", top: 0 }} />
       <div className="explore-trilhas">

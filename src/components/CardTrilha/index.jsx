@@ -34,7 +34,7 @@ CardTrilha.propTypes = {
         dificuldade: PropTypes.string.isRequired,
         // enum
         tipo: PropTypes.oneOf(['caminhada / trekking', 'ciclismo']),
-        nomeUsuario: PropTypes.string.isRequired,
+        nomeUsuario: PropTypes.string,
         urlImagem: PropTypes.string.isRequired
     })
 }

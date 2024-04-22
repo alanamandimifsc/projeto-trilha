@@ -1,18 +1,42 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+
+import { TrilhasContext } from "../context/TrilhasContext"
 
 
 function PaginaCadastroTrilhas() {
-  const { register } = useForm();
+  const { register, handleSubmit } = useForm();
+  const { adicionaTrilha } = useContext(TrilhasContext);
+  const navigate = useNavigate();
+
+
+  function enviarData(data) {
+    console.log(data);
+
+    adicionaTrilha({
+      ...data,
+      duracao: Number(data.duracao),
+      trajeto: Number(data.trajeto)
+    });
+
+    navigate("/listaTrilhas");
+
+  }
+
+
 
 
   return (
     <div className="container">
       <h1>Cadastro de Nova Trilha</h1>
-      <form>
+      <form onSubmit={handleSubmit(enviarData)}>
         <div className="container-cadastro">
           <div>
-            <label htmlFor="nometrilha">Nome da Trilha:</label>
-            <input type="text" {...register("nometrilha", {
+            <label htmlFor="nomeTrilha">Nome da Trilha:</label>
+            <input type="text" {...register("nomeTrilha", {
               required: "Campo obrigatório",
               maxLength: { value: 100, message: "Máximo de 100 caracteres" }
             })} />
@@ -81,8 +105,17 @@ function PaginaCadastroTrilhas() {
             </select>
           </div>
           <div>
-            <label htmlFor="usuario">Usuário:</label>
-            <input type="text" name="usuario" required />
+            <label htmlFor="nomeUsuario">Nome completo do usuário</label>
+            <input
+              type="text"
+              {...register("nomeUsuario", {
+                required: "Este campo é obrigatório",
+                maxLength: {
+                  value: 60,
+                  message: "Este campo aceita no máximo 60 caracteres"
+                }
+              })}
+            />
           </div>
           <div>
             <label htmlFor="dificuldade">Dificuldade:</label>
@@ -96,9 +129,9 @@ function PaginaCadastroTrilhas() {
             </select>
           </div>
           <div>
-            <label htmlFor="tipotrilha">Tipo de Trilha:</label>
+            <label htmlFor="tipo">Tipo de Trilha:</label>
             <select
-              {...register("tipotrilha", {
+              {...register("tipo", {
                 required: "Este campo é obrigatório"
               })}>
               <option value="caminhada / trekking">Caminhada / trekking</option>
@@ -106,9 +139,9 @@ function PaginaCadastroTrilhas() {
             </select>
           </div>
           <div>
-            <label htmlFor="imagem">Urk da Imagem:</label>
+            <label htmlFor="ulrImagem">Urk da Imagem:</label>
             <input type="text"
-              {...register("imagem", {
+              {...register("urlImagem", {
                 required: "Este campo é obrigatório",
                 maxLength: {
                   value: 300,
@@ -117,9 +150,15 @@ function PaginaCadastroTrilhas() {
               })} />
           </div>
         </div>
+        <div>
+
+          <button type="submit">Cadastrar</button>
+
+
+          <button>Voltar</button>
+        </div>
       </form>
-      <button>Cadastrar</button>
-      <button>Voltar</button>
+
     </div>
   );
 }

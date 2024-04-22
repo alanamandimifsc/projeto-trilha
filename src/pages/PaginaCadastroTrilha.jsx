@@ -8,7 +8,7 @@ import { TrilhasContext } from "../context/TrilhasContext"
 
 
 function PaginaCadastroTrilhas() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const { adicionaTrilha } = useContext(TrilhasContext);
   const navigate = useNavigate();
 
@@ -40,6 +40,8 @@ function PaginaCadastroTrilhas() {
               required: "Campo obrigatório",
               maxLength: { value: 100, message: "Máximo de 100 caracteres" }
             })} />
+            {errors?.nomeTrilha && <p>{errors.nomeTrilha?.message}</p>}
+
           </div>
           <div>
             <label htmlFor="duracao">Duração (min):</label>
@@ -48,7 +50,7 @@ function PaginaCadastroTrilhas() {
                 required: "Este campo é obrigatório"
               })}
             />
-
+            {errors?.duracao && <p>{errors.duracao?.message}</p>}
           </div>
           <div>
             <label htmlFor="trajeto" >Trajeto (KM):</label>
@@ -56,6 +58,8 @@ function PaginaCadastroTrilhas() {
               required: "Este campo é obrigatório"
             })}
             />
+            {errors?.trajeto && <p>{errors.trajeto?.message}</p>}
+
           </div>
           <div>
             <label htmlFor="cidade">Cidade:</label>
@@ -68,6 +72,7 @@ function PaginaCadastroTrilhas() {
                 }
               })}
             />
+            {errors?.cidade && <p>{errors.cidade?.message}</p>}
           </div>
           <div>
             <label htmlFor="estado">Estado:</label>
@@ -116,6 +121,7 @@ function PaginaCadastroTrilhas() {
                 }
               })}
             />
+            {errors?.nomeUsuario && <p>{errors.numeUsuario?.message}</p>}
           </div>
           <div>
             <label htmlFor="dificuldade">Dificuldade:</label>
@@ -148,6 +154,7 @@ function PaginaCadastroTrilhas() {
                   message: "Este campo aceita no máximo 300 caracteres"
                 }
               })} />
+            {errors?.urlImagem && <p>{errors.urlImagem?.message}</p>}
           </div>
         </div>
         <div>

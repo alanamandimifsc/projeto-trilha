@@ -2,25 +2,24 @@ import { useEffect, useState } from "react";
 
 function useFetch(url) {
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        setLoading(true);
+        setIsLoading(true);
         fetch(url)
             .then((res) => res.json())
             .then((value) => {
                 setData(value);
-
+                setIsLoading(false);
             })
             .catch((err) => {
                 window.alert("Erro ao carregar dados");
                 console.error(err);
             })
-            .finally(() => setLoading(false));
+            .finally(() => setIsLoading(false));
 
     }, [url]);
-    return [data, loading];
-
+    return [data, isLoading];
 }
 
 export default useFetch;

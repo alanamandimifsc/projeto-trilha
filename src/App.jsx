@@ -1,22 +1,17 @@
-import React from 'react';
-import CardTrilha from './components/CardTrilha';
-import './App.css';
-import useFetch from './hooks/useFetch';
-import Header from './components/header';
-const App = () => {
+import "./App.css";
+import Header from "./components/header";
+import { Outlet } from "react-router-dom";
+import { TrilhasContextProvider } from "./context/TrilhasContext"
+import Footer from "./components/atoms/footer/footer";
 
-
-
+function App() {
   return (
-    <>
+    <TrilhasContextProvider>
       <Header />
-      <div className="container">
-        <h1 className="titulo">Explore trilhas incríveis</h1>
-        <CardTrilha />
-
-      </div>
-    </>
-  )
+      <Outlet />
+      <Footer />
+    </TrilhasContextProvider>
+  );
 }
 
 export default App;

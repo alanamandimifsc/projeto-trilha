@@ -1,59 +1,44 @@
-import * as PropTypes from 'prop-types';
-import './cardTrilha.css';
-import useFetch from '../../hooks/useFetch';
-import { useEffect, useState } from 'react';
+import * as PropTypes from "prop-types"
+import "./cardTrilha.css"
 
-function CardTrilha() {
-    const [dados, isLoading] = useFetch("/trilhas.json");
-    const [trilhas, setTrilhas] = useState([]);
-
-    useEffect(() => {
-        if (!isLoading && dados) {
-            setTrilhas(dados.trilhas)
-        }
-
-    }, [dados, isLoading]);
-
-
-
-
+function CardTrilha({ dadosTrilha }) {
     return (
-        <>
-            {trilhas.map((dadosTrilha) => (
-                <div className="card_container" key={dadosTrilha.name}>
-                    <div className="card_img">
-                        <img className="card_imagem" width={200} src={dadosTrilha.urlImagem} alt="Imagem da trilha" />
-                    </div>
-                    <div className="card_info" >
-                        <h1 className='card_titulo'>{dadosTrilha.nomeTrilha} - {dadosTrilha.cidade} - {dadosTrilha.estado}</h1>
+        <div className="card_container" key={dadosTrilha.name}>
+            <div className="card_img">
+                <img className="card_imagem" width={200} src={dadosTrilha.urlImagem} alt="Imagem da trilha" />
+            </div>
+            <div className="card_info" >
+                <h1 className='card_titulo'>{dadosTrilha.nomeTrilha} - {dadosTrilha.cidade} - {dadosTrilha.estado}</h1>
 
-                        <p>_____________</p>
-                        <p id="autor">Por:{dadosTrilha.nomeUsuario}</p>
-                        <p>Duração: {dadosTrilha.duracao} min</p>
-                        <p>Distância: {dadosTrilha.trajeto} km</p>
-                        <p>Dificuldade: {dadosTrilha.dificuldade}</p>
-                        <p>Tipo: {dadosTrilha.tipo}</p>
+                <p>_____________</p>
+                <p id="autor">Por:{dadosTrilha.nomeUsuario}</p>
+                <p>Duração: {dadosTrilha.duracao} min</p>
+                <p>Distância: {dadosTrilha.trajeto} km</p>
+                <p>Dificuldade: {dadosTrilha.dificuldade}</p>
+                <p>Tipo: {dadosTrilha.tipo}</p>
 
-                    </div>
-                </div>
-            ))};
-        </>
-    );
-
+            </div>
+        </div>
+    )
 }
 
+
+// configuração das props types
 CardTrilha.propTypes = {
-    dadosTrilha: PropTypes.shape({
+    dadosTrilha: PropTypes.exact({
         nomeTrilha: PropTypes.string.isRequired,
         cidade: PropTypes.string.isRequired,
         estado: PropTypes.string.isRequired,
-        duracao: PropTypes.string.isRequired,
-        trajeto: PropTypes.string.isRequired,
+        duracao: PropTypes.number.isRequired,
+        trajeto: PropTypes.number.isRequired,
         dificuldade: PropTypes.string.isRequired,
-        tipo: PropTypes.oneOf(['caminhada', 'trakkking', 'corrida', 'ciclismo']).isRequired,
-        nomeUsuario: PropTypes.string.isRequired,
+        // enum
+        tipo: PropTypes.oneOf(['caminhada / trekking', 'ciclismo']),
+        nomeUsuario: PropTypes.string,
         urlImagem: PropTypes.string.isRequired
     })
 }
+
+// aqui vai os prop-types
 
 export default CardTrilha;

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-// import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 import { TrilhasContext } from "../context/TrilhasContext"
@@ -110,7 +109,7 @@ function PaginaCadastroTrilhas() {
             </select>
           </div>
           <div>
-            <label htmlFor="nomeUsuario">Nome completo do usuário</label>
+            <label htmlFor="nomeUsuario">Nome do usuário</label>
             <input
               type="text"
               {...register("nomeUsuario", {
@@ -157,12 +156,11 @@ function PaginaCadastroTrilhas() {
             {errors?.urlImagem && <p>{errors.urlImagem?.message}</p>}
           </div>
         </div>
-        <div>
-
+        <div className="botoes-cadastro">
           <button type="submit">Cadastrar</button>
-
-
-          <button>Voltar</button>
+          <Link to="/">
+            <button>Voltar</button>
+          </Link>
         </div>
       </form>
 
